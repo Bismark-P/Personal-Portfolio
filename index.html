@@ -41,11 +41,14 @@
             overflow: hidden;
             max-height: 0;
             opacity: 0;
+            /* Added padding-top to compensate for potential margin/padding of hidden LIs */
+            padding-top: 0.5rem; /* Adjust as needed */
         }
         .collapsible-content.expanded {
             /* Increased max-height to ensure all content is visible on expansion, regardless of content length */
             max-height: 9999px; /* A very large value to accommodate any content size */
             opacity: 1;
+            padding-top: 0; /* Reset padding once expanded if not needed */
         }
 
         /* Icon styling for white effect, stroke, and shadow */
@@ -77,14 +80,14 @@
     </nav>
 
     <!-- Hero Section -->
-    <!-- Added pt-24 to push content down and prevent overlap with fixed navigation bar -->
-    <section id="about" class="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden bg-slate-950 pt-24">
+    <!-- Adjusted pt to ensure content is below the fixed navigation bar -->
+    <section id="about" class="relative min-h-screen flex items-center justify-center text-center p-8 overflow-hidden bg-slate-950 pt-24 md:pt-32">
         <!-- Subtle gradient or pattern for modern look -->
         <div class="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-950 opacity-50"></div>
         <div class="relative z-10 max-w-4xl mx-auto flex flex-col md:flex-row items-center md:items-start justify-center gap-10 md:gap-16">
             <div class="w-48 h-48 md:w-64 md:h-64 rounded-full overflow-hidden shadow-xl shadow-slate-700 ring-4 ring-yellow-500 flex-shrink-0">
                 <!-- Replace this placeholder with your actual photo from assets folder -->
-                <img src="./Assets/myPic.jpg" alt="Bismark Pinkrah" class="w-full h-full object-cover">
+                <img src="assets/your_photo.jpg" alt="Bismark Pinkrah" class="w-full h-full object-cover">
             </div>
             <div class="text-left md:text-left flex-grow">
                 <p class="text-lg md:text-xl text-slate-400 mb-2">Hello, I'm</p>
@@ -99,7 +102,7 @@
                 </p>
                 <div class="mt-8 flex flex-wrap gap-4 justify-center md:justify-start">
                     <a href="#contact" class="px-8 py-3 bg-yellow-500 text-slate-900 font-semibold rounded-full shadow-lg hover:bg-yellow-600 transform hover:scale-105 transition duration-300 ease-in-out">Get in Touch</a>
-                    <a href="./Assets/Bismark Pinkrah CV June, 2025-M.pdf" target="_blank" class="px-8 py-3 border-2 border-yellow-500 text-yellow-400 font-semibold rounded-full hover:bg-yellow-950 hover:bg-opacity-20 transform hover:scale-105 transition duration-300 ease-in-out">Download CV</a>
+                    <a href="assets/BISMARK PINKRAH CV-Resume (Updated April 2025).pdf" target="_blank" class="px-8 py-3 border-2 border-yellow-500 text-yellow-400 font-semibold rounded-full hover:bg-yellow-950 hover:bg-opacity-20 transform hover:scale-105 transition duration-300 ease-in-out">Download CV</a>
                 </div>
             </div>
         </div>
@@ -139,6 +142,10 @@
                         <div class="collapsible-content"> <!-- Content from 5th item onwards -->
                             <li>Email Marketing Automation</li>
                             <li>Web Content Management</li>
+                            <li>Social Media Management</li>
+                            <li>Digital Media Communications</li>
+                            <li>Running Meta Ads</li>
+                            <li>Running Google Ads</li>
                         </div>
                     </ul>
                     <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
@@ -190,7 +197,7 @@
             <h2 class="text-4xl font-bold text-center mb-12 text-slate-50">My Projects</h2>
 
             <!-- Backend Projects -->
-            <h3 class="text-3xl font-semibold text-slate-200 mb-8 text-center md:text-left">Backend Projects (MongoDB, Express, Node.js)</h3>
+            <h3 class="text-3xl font-semibold text-center text-slate-200 mb-8">Backend Projects (MongoDB, Express, Node.js)</h3>
             <div class="flex flex-wrap lg:flex-nowrap justify-center gap-8 mb-16">
                 <!-- Project Card 1: Event-API -->
                 <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 card-glow flex-shrink-0 w-full md:w-1/2 lg:w-1/4">
@@ -255,7 +262,7 @@
             </div>
 
             <!-- Frontend/Web Design Projects -->
-            <h3 class="text-3xl font-semibold text-slate-200 mb-8 text-center md:text-left">Frontend / Web Design Projects (HTML, CSS, Tailwind CSS)</h3>
+            <h3 class="text-3xl font-semibold text-center text-slate-200 mb-8">Frontend / Web Design Projects (HTML, CSS, Tailwind CSS)</h3>
             <div class="flex flex-wrap lg:flex-nowrap justify-center gap-8">
                 <!-- Project Card 1: Portfolio (Frontend) -->
                 <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 hover:shadow-xl transform hover:-translate-y-1 transition-all duration-300 card-glow flex-shrink-0 w-full md:w-1/2 lg:w-1/4">
@@ -332,10 +339,10 @@
                         <li>Currently involved in managing digital operations and media strategies.</li>
                         <li>Focus on enhancing online presence and engagement.</li>
                         <li>Collaborating on various digital marketing initiatives.</li>
+                        <li>Social Media Management</li>
+                        <li>Digital Media Communications</li>
+                        <li>Running Meta Ads</li>
                         <div class="collapsible-content">
-                            <li>Social Media Management</li>
-                            <li>Digital Media Communications</li>
-                            <li>Running Meta Ads</li>
                             <li>Running Google Ads</li>
                         </div>
                     </ul>
@@ -542,27 +549,27 @@
             <div class="flex flex-wrap justify-center gap-6 md:gap-8">
                 <!-- LinkedIn -->
                 <a href="https://www.linkedin.com/in/bismark-pinkrah/" target="_blank" class="flex flex-col items-center p-4 rounded-xl bg-green-800 shadow-lg shadow-green-900/20 hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 card-glow">
-                    <img src="./Assets/linkedin.png" alt="LinkedIn icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
+                    <img src="assets/linkedin.png" alt="LinkedIn icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
                     <span class="font-medium text-slate-300">LinkedIn</span>
                 </a>
                 <!-- GitHub -->
                 <a href="https://github.com/Bismark-P" target="_blank" class="flex flex-col items-center p-4 rounded-xl bg-green-800 shadow-lg shadow-green-900/20 hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 card-glow">
-                    <img src="./Assets/github.png" alt="GitHub icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
+                    <img src="assets/github.png" alt="GitHub icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
                     <span class="font-medium text-slate-300">GitHub</span>
                 </a>
                 <!-- WhatsApp -->
                 <a href="http://wa.me/233572334220" target="_blank" class="flex flex-col items-center p-4 rounded-xl bg-green-800 shadow-lg shadow-green-900/20 hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 card-glow">
-                    <img src="./Assets/whatsapp.png" alt="WhatsApp icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
+                    <img src="assets/whatsapp.png" alt="WhatsApp icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
                     <span class="font-medium text-slate-300">WhatsApp</span>
                 </a>
                 <!-- Phone Call -->
                 <a href="tel:+233572334220" class="flex flex-col items-center p-4 rounded-xl bg-green-800 shadow-lg shadow-green-900/20 hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 card-glow">
-                    <img src="./Assets/call.png" alt="Phone icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
+                    <img src="assets/phone.png" alt="Phone icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
                     <span class="font-medium text-slate-300">Call Me</span>
                 </a>
                 <!-- Email -->
                 <a href="mailto:bismarkpinkrah@hotmail.com" class="flex flex-col items-center p-4 rounded-xl bg-green-800 shadow-lg shadow-green-900/20 hover:bg-green-700 transition-all duration-300 transform hover:-translate-y-1 card-glow">
-                    <img src="./Assets/email.png" alt="Email icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
+                    <img src="assets/email.png" alt="Email icon" class="w-10 h-10 mb-2 white-stroke-shadow-icon">
                     <span class="font-medium text-slate-300">Email Me</span>
                 </a>
             </div>
@@ -583,15 +590,28 @@
 
     <!-- JavaScript for Inline Expansion -->
     <script>
+        // Function to set up collapsible cards on page load
+        function setupCollapsibleCards() {
+            document.querySelectorAll('.toggle-content-btn').forEach(button => {
+                const parentUl = button.previousElementSibling; // The <ul> before the button
+                const collapsibleDiv = parentUl.querySelector('.collapsible-content');
+                
+                if (collapsibleDiv && collapsibleDiv.querySelectorAll('li').length > 0) {
+                    // If there are hidden items, ensure the button is visible
+                    button.style.display = 'block'; 
+                } else {
+                    // If no hidden items, hide the button
+                    button.style.display = 'none';
+                }
+            });
+        }
+
         // --- Inline Expansion Functionality for Skills, Work Experience, Education & Certifications ---
         document.querySelectorAll('.toggle-content-btn').forEach(button => {
             button.addEventListener('click', () => {
-                // Find the parent <ul> or container that holds the collapsible content
-                // This logic assumes the collapsible-content is a direct sibling or child within the same container
-                const parentContainer = button.closest('.bg-green-800, .bg-slate-800'); // Find the closest card container
-                if (!parentContainer) return; // Exit if no valid parent container found
+                const parentContainer = button.closest('.bg-green-800, .bg-slate-800'); 
+                if (!parentContainer) return; 
 
-                // Find the collapsible content within this specific card
                 const collapsibleDiv = parentContainer.querySelector('.collapsible-content');
 
                 if (collapsibleDiv) {
@@ -604,6 +624,9 @@
                 }
             });
         });
+
+        // Call the setup function when the DOM is fully loaded
+        document.addEventListener('DOMContentLoaded', setupCollapsibleCards);
     </script>
 </body>
 </html>
