@@ -41,14 +41,10 @@
             overflow: hidden;
             max-height: 0;
             opacity: 0;
-            /* Added padding-top to compensate for potential margin/padding of hidden LIs */
-            padding-top: 0.5rem; /* Adjust as needed */
         }
         .collapsible-content.expanded {
-            /* Increased max-height to ensure all content is visible on expansion, regardless of content length */
             max-height: 9999px; /* A very large value to accommodate any content size */
             opacity: 1;
-            padding-top: 0; /* Reset padding once expanded if not needed */
         }
 
         /* Icon styling for white effect, stroke, and shadow */
@@ -115,57 +111,63 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <!-- Skill Card 1: Backend Development -->
-                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Backend Development</h3>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>MongoDB (Database Management)</li>
-                        <li>Express.js (Web Application Framework)</li>
-                        <li>Node.js (Runtime Environment)</li>
-                        <li>API Design & Development</li> <!-- 4th line, visible -->
-                        <div class="collapsible-content"> <!-- Content from 5th item onwards -->
-                            <li>Database Optimization</li>
-                            <li>Security Best Practices</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Backend Development</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>MongoDB (Database Management)</li>
+                            <li>Express.js (Web Application Framework)</li>
+                            <li>Node.js (Runtime Environment)</li>
+                            <li>API Design & Development</li> <!-- 4th line, visible -->
+                            <div class="collapsible-content"> <!-- Content from 5th item onwards -->
+                                <li>Database Optimization</li>
+                                <li>Security Best Practices</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
                 <!-- Skill Card 2: Digital Operations & Media -->
-                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Digital Operations & Media</h3>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Digital Marketing Strategy</li>
-                        <li>SEO & Campaign Analytics</li>
-                        <li>Content Creation (Graphic Design, Video Editing)</li>
-                        <li>Social Media Optimization</li> <!-- 4th line, visible -->
-                        <div class="collapsible-content"> <!-- Content from 5th item onwards -->
-                            <li>Email Marketing Automation</li>
-                            <li>Web Content Management</li>
-                            <li>Social Media Management</li>
-                            <li>Digital Media Communications</li>
-                            <li>Running Meta Ads</li>
-                            <li>Running Google Ads</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Digital Operations & Media</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Digital Marketing Strategy</li>
+                            <li>SEO & Campaign Analytics</li>
+                            <li>Content Creation (Graphic Design, Video Editing)</li>
+                            <li>Social Media Optimization</li> <!-- 4th line, visible -->
+                            <div class="collapsible-content"> <!-- Content from 5th item onwards -->
+                                <li>Email Marketing Automation</li>
+                                <li>Web Content Management</li>
+                                <li>Social Media Management</li>
+                                <li>Digital Media Communications</li>
+                                <li>Running Meta Ads</li>
+                                <li>Running Google Ads</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
                 <!-- Skill Card 3: Administration & Strategy -->
-                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Administration & Strategy</h3>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Administrative Support & Coordination</li>
-                        <li>Data Entry & Visualization (Advanced Excel, Google Analytics)</li>
-                        <li>Customer Service & Client Retention</li>
-                        <li>Strategic Advisory & Problem Solving</li> <!-- 4th line, visible -->
-                        <div class="collapsible-content"> <!-- Content from 5th item onwards -->
-                            <li>Budget Management & Reporting</li>
-                            <li>Process Automation & Optimization</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Administration & Strategy</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Administrative Support & Coordination</li>
+                            <li>Data Entry & Visualization (Advanced Excel, Google Analytics)</li>
+                            <li>Customer Service & Client Retention</li>
+                            <li>Strategic Advisory & Problem Solving</li> <!-- 4th line, visible -->
+                            <div class="collapsible-content"> <!-- Content from 5th item onwards -->
+                                <li>Budget Management & Reporting</li>
+                                <li>Process Automation & Optimization</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
@@ -331,133 +333,148 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Experience Card 1: Digital Operations and Media Specialist at CoCAHM -->
-                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-xl font-semibold text-slate-50 mb-2">Digital Operations and Media Specialist</h3>
-                    <p class="text-yellow-400 mb-2">CoCAHM (Part-time)</p>
-                    <p class="text-slate-400 text-sm mb-4">March 2025 - Present</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Currently involved in managing digital operations and media strategies.</li>
-                        <li>Focus on enhancing online presence and engagement.</li>
-                        <li>Collaborating on various digital marketing initiatives.</li>
-                        <li>Social Media Management</li>
-                        <li>Digital Media Communications</li>
-                        <li>Running Meta Ads</li>
-                        <div class="collapsible-content">
-                            <li>Running Google Ads</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[300px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-50 mb-2">Digital Operations and Media Specialist</h3>
+                        <p class="text-yellow-400 mb-2">CoCAHM (Part-time)</p>
+                        <p class="text-slate-400 text-sm mb-4">March 2025 - Present</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Currently involved in managing digital operations and media strategies.</li>
+                            <li>Focus on enhancing online presence and engagement.</li>
+                            <li>Collaborating on various digital marketing initiatives.</li>
+                            <li>Social Media Management</li>
+                            <li>Digital Media Communications</li>
+                            <li>Running Meta Ads</li>
+                            <div class="collapsible-content">
+                                <li>Running Google Ads</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
 
                 <!-- Experience Card 2: Digital Marketer at Honghai House Ghana Limited -->
-                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-xl font-semibold text-slate-50 mb-2">Digital Marketer</h3>
-                    <p class="text-yellow-400 mb-2">Honghai House Ghana Limited</p>
-                    <p class="text-slate-400 text-sm mb-4">May 2011 - December 2022</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Developed and carried out more than 20 marketing campaigns, enhancing brand visibility by 20%.</li>
-                        <li>Led SEO initiatives, increasing website traffic by 30%.</li>
-                        <li>Launched marketing strategies, boosting audience engagement by 25%.</li>
-                        <li>Updated website and emails liaising with the web developer, improving user experience by 15%.</li>
-                        <li>Reported on social media campaigns, enhancing future strategies by 10%.</li>
-                        <li>Supported IT operations, diagnosing and resolving more than 30 technical and software issues.</li>
-                        <div class="collapsible-content">
-                            <li>Created and designed graphic content, took high-quality photographs, and edited videos for marketing, boosting brand recognition by 25%.</li>
-                            <li>Assisted in travel bookings and calendar coordination eliminating scheduling conflicts and reducing travel costs by 20%.</li>
-                            <li>Managed social media and branding, boosting engagement and recognition by more 50%.</li>
-                            <li>Facilitated more than 15 events and seminars, streamlining logistics and boosting participation by more than 30%.</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[300px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-50 mb-2">Digital Marketer</h3>
+                        <p class="text-yellow-400 mb-2">Honghai House Ghana Limited</p>
+                        <p class="text-slate-400 text-sm mb-4">May 2011 - December 2022</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Developed and carried out more than 20 marketing campaigns, enhancing brand visibility by 20%.</li>
+                            <li>Led SEO initiatives, increasing website traffic by 30%.</li>
+                            <li>Launched marketing strategies, boosting audience engagement by 25%.</li>
+                            <li>Updated website and emails liaising with the web developer, improving user experience by 15%.</li>
+                            <li>Reported on social media campaigns, enhancing future strategies by 10%.</li>
+                            <li>Supported IT operations, diagnosing and resolving more than 30 technical and software issues.</li>
+                            <div class="collapsible-content">
+                                <li>Created and designed graphic content, took high-quality photographs, and edited videos for marketing, boosting brand recognition by 25%.</li>
+                                <li>Assisted in travel bookings and calendar coordination eliminating scheduling conflicts and reducing travel costs by 20%.</li>
+                                <li>Managed social media and branding, boosting engagement and recognition by more 50%.</li>
+                                <li>Facilitated more than 15 events and seminars, streamlining logistics and boosting participation by more than 30%.</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
 
                 <!-- Experience Card 3: Multimedia Coordinator @ Concept360 -->
-                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-xl font-semibold text-slate-50 mb-2">Multimedia Coordinator</h3>
-                    <p class="text-yellow-400 mb-2">Concept360</p>
-                    <p class="text-slate-400 text-sm mb-4">December 2022 - Present</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Designed and produced 100+ marketing materials (brochures, banners, flyers), boosting brand visibility.</li>
-                        <li>Managed video production and photography for more than 50 clients.</li>
-                        <li>Researched and applied new design trends, boosting client satisfaction and brand visibility by 15%.</li>
-                        <li>Consulted with clients on design packages, increasing sales by more than 15%.</li>
-                        <li>Executed 12+ multimedia campaigns (social, email, video) for 10+ clients, boosting engagement by 35% and increasing lead generation by 20% while ensuring 100% brand compliance.</li>
-                        <li>Optimised procurement, travel and operational workflows, boosting efficiency by 30%.</li>
-                        <div class="collapsible-content">
-                            <li>Provided IT support, resolving more than 50% of technical and software issues.</li>
-                            <li>Managed design and multimedia equipment and office supplies, ensuring 100% uptime and availability.</li>
-                            <li>Maintained accurate financial records, overseeing accounts payable/receivable and managing budgets, ensuring 100% compliance and accuracy.</li>
-                            <li>Streamlined data entry and file organisation, customer support and expense tracking/reporting boosting client satisfaction by 40%.</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[300px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-50 mb-2">Multimedia Coordinator</h3>
+                        <p class="text-yellow-400 mb-2">Concept360</p>
+                        <p class="text-slate-400 text-sm mb-4">December 2022 - Present</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Designed and produced 100+ marketing materials (brochures, banners, flyers), boosting brand visibility.</li>
+                            <li>Managed video production and photography for more than 50 clients.</li>
+                            <li>Researched and applied new design trends, boosting client satisfaction and brand visibility by 15%.</li>
+                            <li>Consulted with clients on design packages, increasing sales by more than 15%.</li>
+                            <li>Executed 12+ multimedia campaigns (social, email, video) for 10+ clients, boosting engagement by 35% and increasing lead generation by 20% while ensuring 100% brand compliance.</li>
+                            <li>Optimised procurement, travel and operational workflows, boosting efficiency by 30%.</li>
+                            <div class="collapsible-content">
+                                <li>Provided IT support, resolving more than 50% of technical and software issues.</li>
+                                <li>Managed design and multimedia equipment and office supplies, ensuring 100% uptime and availability.</li>
+                                <li>Maintained accurate financial records, overseeing accounts payable/receivable and managing budgets, ensuring 100% compliance and accuracy.</li>
+                                <li>Streamlined data entry and file organisation, customer support and expense tracking/reporting boosting client satisfaction by 40%.</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
 
                 <!-- Experience Card 4: Social Media Strategist at Dainess Chef's School -->
-                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-xl font-semibold text-slate-50 mb-2">Social Media Strategist</h3>
-                    <p class="text-yellow-400 mb-2">Dainess Chef's School</p>
-                    <p class="text-slate-400 text-sm mb-4">February 2011 - August 2015</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Scheduled social media posts, increasing community engagement by 50%.</li>
-                        <li>Collected and analyzed data on engagement, reach, and impressions, enhancing campaign effectiveness by 15%.</li>
-                        <li>Initiated and launched social media marketing campaigns with clear CTAs, boosting interaction rates by 25%.</li>
-                        <li>Developed design briefs for graphics, videos, and ads, streamlining creative workflow, increasing satisfaction by 25%.</li>
-                        <li>Administered social media accounts and content strategy, resulting in a 30% increase in followers.</li>
-                        <li>Designed marketing materials, ads, and newsletters, improving brand visibility by 20%.</li>
-                        <div class="collapsible-content">
-                            <li>Delivered IT support and budget planning for digital marketing campaigns, optimizing resource allocation and reducing costs by 12%.</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[300px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-50 mb-2">Social Media Strategist</h3>
+                        <p class="text-yellow-400 mb-2">Dainess Chef's School</p>
+                        <p class="text-slate-400 text-sm mb-4">February 2011 - August 2015</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Scheduled social media posts, increasing community engagement by 50%.</li>
+                            <li>Collected and analyzed data on engagement, reach, and impressions, enhancing campaign effectiveness by 15%.</li>
+                            <li>Initiated and launched social media marketing campaigns with clear CTAs, boosting interaction rates by 25%.</li>
+                            <li>Developed design briefs for graphics, videos, and ads, streamlining creative workflow, increasing satisfaction by 25%.</li>
+                            <li>Administered social media accounts and content strategy, resulting in a 30% increase in followers.</li>
+                            <li>Designed marketing materials, ads, and newsletters, improving brand visibility by 20%.</li>
+                            <div class="collapsible-content">
+                                <li>Delivered IT support and budget planning for digital marketing campaigns, optimizing resource allocation and reducing costs by 12%.</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
 
                 <!-- Experience Card 5: Business Development Executive at NEIP (Orios Group) -->
-                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-xl font-semibold text-slate-50 mb-2">Business Development Executive</h3>
-                    <p class="text-yellow-400 mb-2">NEIP (Orios Group) - National Service</p>
-                    <p class="text-slate-400 text-sm mb-4">September 2015 - August 2020</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Built strong business networks by directly communicating with customers and partners, resulting in a 20% expansion of the client base.</li>
-                        <li>Conducted more than 20 client consultations and stakeholder briefings, delivering data-driven insights that informed strategic decisions, boosting revenue and operational efficiency by more than 20%.</li>
-                        <li>Boosted customer retention by 15% through effective communication and quick response.</li>
-                        <li>Supervised customer records, prioritising accuracy and enhancing database efficiency by 25%.</li>
-                        <li>Participated in sales meetings trainings, contributing to a 10% increase in team sales performance.</li>
-                        <li>Led accounting operations (cash flows, budgets and financial forecasts), ensuring 100% accuracy in financial documentation and projections.</li>
-                        <div class="collapsible-content">
-                            <li>Curated and worked on ads and flyers, boosting engagement and recognition by 15%.</li>
-                            <li>Rendered IT support, ensuring smooth operations and resolving more than 15 technical issues.</li>
-                            <li>Organised seminars, training sessions and client meetings for more than 10 teams ensuring participant engagemnt.</li>
-                            <li>Optimized procurement processes, increasing delivery rates by 30% and reducing costs by 15% through vendor negotiations.</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[300px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-50 mb-2">Business Development Executive</h3>
+                        <p class="text-yellow-400 mb-2">NEIP (Orios Group) - National Service</p>
+                        <p class="text-slate-400 text-sm mb-4">September 2015 - August 2020</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Built strong business networks by directly communicating with customers and partners, resulting in a 20% expansion of the client base.</li>
+                            <li>Conducted more than 20 client consultations and stakeholder briefings, delivering data-driven insights that informed strategic decisions, boosting revenue and operational efficiency by more than 20%.</li>
+                            <li>Boosted customer retention by 15% through effective communication and quick response.</li>
+                            <li>Supervised customer records, prioritising accuracy and enhancing database efficiency by 25%.</li>
+                            <li>Participated in sales meetings trainings, contributing to a 10% increase in team sales performance.</li>
+                            <li>Led accounting operations (cash flows, budgets and financial forecasts), ensuring 100% accuracy in financial documentation and projections.</li>
+                            <div class="collapsible-content">
+                                <li>Curated and worked on ads and flyers, boosting engagement and recognition by 15%.</li>
+                                <li>Rendered IT support, ensuring smooth operations and resolving more than 15 technical issues.</li>
+                                <li>Organised seminars, training sessions and client meetings for more than 10 teams ensuring participant engagemnt.</li>
+                                <li>Optimized procurement processes, increasing delivery rates by 30% and reducing costs by 15% through vendor negotiations.</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
 
                 <!-- Experience Card 6: Administrative Assistant at AMA -->
-                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow">
-                    <h3 class="text-xl font-semibold text-slate-50 mb-2">Administrative Assistant</h3>
-                    <p class="text-yellow-400 mb-2">Accra Metropolitan Assembly (Internship)</p>
-                    <p class="text-slate-400 text-sm mb-4">2017</p>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2">
-                        <li>Managed calendars for 5+ executives, improving scheduling efficiency by 25%.</li>
-                        <li>Coordinated 50+ meetings with pre-prepared agendas, enhancing team productivity by 20%.</li>
-                        <li>Digitized filing systems, cutting document retrieval time by 15%.</li>
-                        <li>Reduced delayed responses by 40% by streamlining email/call management.</li>
-                        <li>Synchroniced administrative workflows across 3 teams, ensuring 100% on-time project submissions.</li>
-                        <li>Optimized travel coordination, saving $2,000 quarterly through budget-friendly itineraries.</li>
-                        <!-- This card now correctly shows all 6 items as per the instruction for 6 lines max -->
-                    </ul>
+                <div class="bg-green-800 p-6 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[300px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-xl font-semibold text-slate-50 mb-2">Administrative Assistant</h3>
+                        <p class="text-yellow-400 mb-2">Accra Metropolitan Assembly (Internship)</p>
+                        <p class="text-slate-400 text-sm mb-4">2017</p>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2">
+                            <li>Managed calendars for 5+ executives, improving scheduling efficiency by 25%.</li>
+                            <li>Coordinated 50+ meetings with pre-prepared agendas, enhancing team productivity by 20%.</li>
+                            <li>Digitized filing systems, cutting document retrieval time by 15%.</li>
+                            <li>Reduced delayed responses by 40% by streamlining email/call management.</li>
+                            <li>Synchroniced administrative workflows across 3 teams, ensuring 100% on-time project submissions.</li>
+                            <li>Optimized travel coordination, saving $2,000 quarterly through budget-friendly itineraries.</li>
+                        </ul>
+                    </div>
+                    <!-- This button will be hidden by JavaScript if there are no hidden list items -->
+                    <button class="toggle-content-btn px-4 py-2 mt-4 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
+                        View More
+                    </button>
                 </div>
             </div>
         </div>
@@ -470,68 +487,74 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Certifications Card -->
-                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Certifications</h3>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
-                        <li>Digital Literacy (IBM, April 2025)</li>
-                        <li>Data Fundamentals (IBM, April 2025)</li>
-                        <li>Web Development Fundamentals (IBM, Aug. 2024)</li>
-                        <li>Search Engine Optimization (Hubspot, July 2022)</li>
-                        <div class="collapsible-content">
-                            <li>WordPress for Beginners (Yoast BV, March 2022)</li>
-                            <li>Google Analytics for Beginners (Google, Feb. 2022)</li>
-                            <li>Digital Marketing (Hubspot Academy, June 2022)</li>
-                            <li>Hootsuite Platform Training (Simplilearn, May 2022)</li>
-                            <li>Social Media Marketing: Strategy and Optimization (LinkedIn Learning, Feb 2022)</li>
-                            <li>SEO Foundations (LinkedIn Learning, Feb 2022)</li>
-                            <li>Digital marketing Foundations (LinkedIn Learning, Feb 2022)</li>
-                            <li>Digital Skills: Social Media (Accenture, Nov. 2021)</li>
-                            <li>Fundamentals of Digital Marketing (Google, Feb 2021)</li>
-                            <li>Virtual Assistant (ALX, March 2023)</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Certifications</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
+                            <li>Digital Literacy (IBM, April 2025)</li>
+                            <li>Data Fundamentals (IBM, April 2025)</li>
+                            <li>Web Development Fundamentals (IBM, Aug. 2024)</li>
+                            <li>Search Engine Optimization (Hubspot, July 2022)</li>
+                            <div class="collapsible-content">
+                                <li>WordPress for Beginners (Yoast BV, March 2022)</li>
+                                <li>Google Analytics for Beginners (Google, Feb. 2022)</li>
+                                <li>Digital Marketing (Hubspot Academy, June 2022)</li>
+                                <li>Hootsuite Platform Training (Simplilearn, May 2022)</li>
+                                <li>Social Media Marketing: Strategy and Optimization (LinkedIn Learning, Feb 2022)</li>
+                                <li>SEO Foundations (LinkedIn Learning, Feb 2022)</li>
+                                <li>Digital marketing Foundations (LinkedIn Learning, Feb 2022)</li>
+                                <li>Digital Skills: Social Media (Accenture, Nov. 2021)</li>
+                                <li>Fundamentals of Digital Marketing (Google, Feb 2021)</li>
+                                <li>Virtual Assistant (ALX, March 2023)</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
 
                 <!-- Training Card -->
-                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Training</h3>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
-                        <li>MEST Web Development (May 2025 - Present)</li>
-                        <li>GEA - Entrepreneurship Training</li>
-                        <li>Focused on advanced MERN stack.</li>
-                        <li>Workshops and mentorship sessions.</li>
-                        <div class="collapsible-content">
-                            <li>Comprehensive training in modern web development frameworks.</li>
-                            <li>Specializing in full-stack JavaScript applications.</li>
-                            <li>Practical projects focusing on real-world problem-solving.</li>
-                            <li>Covers both front-end (React, HTML, CSS) and back-end (Node.js, Express, MongoDB).</li>
-                            <li>Intensive program on starting and scaling small businesses.</li>
-                            <li>Topics included market research, financial planning, legal aspects, and team building.</li>
-                            <li>Hands-on workshops and mentorship sessions.</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Training</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
+                            <li>MEST Web Development (May 2025 - Present)</li>
+                            <li>GEA - Entrepreneurship Training</li>
+                            <li>Focused on advanced MERN stack.</li>
+                            <li>Workshops and mentorship sessions.</li>
+                            <div class="collapsible-content">
+                                <li>Comprehensive training in modern web development frameworks.</li>
+                                <li>Specializing in full-stack JavaScript applications.</li>
+                                <li>Practical projects focusing on real-world problem-solving.</li>
+                                <li>Covers both front-end (React, HTML, CSS) and back-end (Node.js, Express, MongoDB).</li>
+                                <li>Intensive program on starting and scaling small businesses.</li>
+                                <li>Topics included market research, financial planning, legal aspects, and team building.</li>
+                                <li>Hands-on workshops and mentorship sessions.</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
 
                 <!-- Education Card -->
-                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow">
-                    <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Education</h3>
-                    <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
-                        <li>Bachelor's Degree: BSc. Administration (Accounting)</li>
-                        <li>University Of Ghana, Legon, Accra</li>
-                        <li>Period: 2015-2019</li>
-                        <li>Key Courses: Financial Accounting, Management Accounting.</li>
-                        <div class="collapsible-content">
-                            <li>Auditing, Taxation, Business Law, Economics, Statistics.</li>
-                            <li>Achievements: Dean's List (mention if applicable), actively participated in [relevant clubs/societies].</li>
-                        </div>
-                    </ul>
-                    <button class="toggle-content-btn px-4 py-2 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200">
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                    <div>
+                        <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Education</h3>
+                        <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
+                            <li>Bachelor's Degree: BSc. Administration (Accounting)</li>
+                            <li>University Of Ghana, Legon, Accra</li>
+                            <li>Period: 2015-2019</li>
+                            <li>Key Courses: Financial Accounting, Management Accounting.</li>
+                            <div class="collapsible-content">
+                                <li>Auditing, Taxation, Business Law, Economics, Statistics.</li>
+                                <li>Achievements: Dean's List (mention if applicable), actively participated in [relevant clubs/societies].</li>
+                            </div>
+                        </ul>
+                    </div>
+                    <button class="toggle-content-btn px-4 py-2 bg-yellow-500 text-slate-900 rounded-full text-sm hover:bg-yellow-600 transition-colors duration-200 self-start">
                         View More
                     </button>
                 </div>
@@ -592,16 +615,50 @@
     <script>
         // Function to set up collapsible cards on page load
         function setupCollapsibleCards() {
-            document.querySelectorAll('.toggle-content-btn').forEach(button => {
-                const parentUl = button.previousElementSibling; // The <ul> before the button
-                const collapsibleDiv = parentUl.querySelector('.collapsible-content');
+            document.querySelectorAll('.bg-green-800, .bg-slate-800').forEach(card => {
+                const ul = card.querySelector('ul');
+                if (!ul) return;
+
+                const listItems = Array.from(ul.children);
+                let visibleCount = 0;
                 
-                if (collapsibleDiv && collapsibleDiv.querySelectorAll('li').length > 0) {
-                    // If there are hidden items, ensure the button is visible
-                    button.style.display = 'block'; 
+                // Determine visible lines based on section
+                let limit = 0;
+                if (card.closest('#skills')) {
+                    limit = 4;
+                } else if (card.closest('#experience')) {
+                    limit = 6;
+                } else if (card.closest('#education')) { // Assuming Certifications/Training/Education use 4 lines initially
+                    limit = 4;
+                }
+
+                // Count how many non-collapsible-content list items are present initially
+                listItems.forEach(item => {
+                    if (!item.classList.contains('collapsible-content')) {
+                        visibleCount++;
+                    }
+                });
+
+                const collapsibleDiv = card.querySelector('.collapsible-content');
+                const toggleButton = card.querySelector('.toggle-content-btn');
+
+                if (collapsibleDiv && listItems.length > limit) {
+                    // Show the button if there are items inside the collapsible-content div
+                    // We need to move items *into* collapsible-content if they exceed the limit
+                    listItems.forEach((item, index) => {
+                        if (index >= limit && !item.classList.contains('collapsible-content')) {
+                            collapsibleDiv.appendChild(item);
+                        }
+                    });
+                    toggleButton.style.display = 'block';
                 } else {
-                    // If no hidden items, hide the button
-                    button.style.display = 'none';
+                    // Hide the button if there are no items to hide
+                    if (toggleButton) {
+                        toggleButton.style.display = 'none';
+                    }
+                    if (collapsibleDiv) {
+                        collapsibleDiv.classList.remove('expanded'); // Ensure it's not expanded if button is hidden
+                    }
                 }
             });
         }
