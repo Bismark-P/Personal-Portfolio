@@ -111,7 +111,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
                 <!-- Skill Card 1: Backend Development -->
-                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[250px] flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Backend Development</h3>
                         <ul class="list-disc list-inside text-slate-300 space-y-2">
@@ -130,7 +130,7 @@
                     </button>
                 </div>
                 <!-- Skill Card 2: Digital Operations & Media -->
-                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[250px] flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Digital Operations & Media</h3>
                         <ul class="list-disc list-inside text-slate-300 space-y-2">
@@ -153,7 +153,7 @@
                     </button>
                 </div>
                 <!-- Skill Card 3: Administration & Strategy -->
-                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                <div class="bg-green-800 p-8 rounded-xl shadow-lg shadow-green-900/20 border border-green-700 hover:shadow-xl transition-all duration-300 card-glow min-h-[250px] flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-semibold text-yellow-400 mb-4">Administration & Strategy</h3>
                         <ul class="list-disc list-inside text-slate-300 space-y-2">
@@ -487,7 +487,7 @@
 
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                 <!-- Certifications Card -->
-                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[250px] flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Certifications</h3>
                         <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
@@ -515,7 +515,7 @@
                 </div>
 
                 <!-- Training Card -->
-                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[250px] flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-semibold text-yellow-400 mb-3">Training</h3>
                         <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
@@ -540,7 +540,7 @@
                 </div>
 
                 <!-- Education Card -->
-                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[280px] flex flex-col justify-between">
+                <div class="bg-slate-800 p-6 rounded-xl shadow-lg shadow-slate-800/20 border border-slate-700 transition-all duration-300 card-glow min-h-[250px] flex flex-col justify-between">
                     <div>
                         <h3 class="text-2xl font-semibold text-yellow-400 mb-2">Education</h3>
                         <ul class="list-disc list-inside text-slate-300 space-y-2 mb-4">
@@ -620,48 +620,70 @@
                 if (!ul) return;
 
                 const listItems = Array.from(ul.children);
-                let visibleCount = 0;
                 
-                // Determine visible lines based on section
+                // Determine visible lines limit based on section
                 let limit = 0;
-                if (card.closest('#skills')) {
+                if (card.closest('#skills') || card.closest('#education')) {
                     limit = 4;
                 } else if (card.closest('#experience')) {
                     limit = 6;
-                } else if (card.closest('#education')) { // Assuming Certifications/Training/Education use 4 lines initially
-                    limit = 4;
                 }
 
-                // Count how many non-collapsible-content list items are present initially
+                // Separate visible items from collapsible items
+                const initialVisibleItems = [];
+                let collapsibleItems = [];
+
                 listItems.forEach(item => {
-                    if (!item.classList.contains('collapsible-content')) {
-                        visibleCount++;
+                    if (item.classList.contains('collapsible-content')) {
+                        // All items inside a pre-existing collapsible-content div
+                        collapsibleItems = Array.from(item.children);
+                    } else {
+                        initialVisibleItems.push(item);
                     }
                 });
+
+                const totalItems = initialVisibleItems.length + collapsibleItems.length;
 
                 const collapsibleDiv = card.querySelector('.collapsible-content');
                 const toggleButton = card.querySelector('.toggle-content-btn');
 
-                if (collapsibleDiv && listItems.length > limit) {
-                    // Show the button if there are items inside the collapsible-content div
-                    // We need to move items *into* collapsible-content if they exceed the limit
-                    listItems.forEach((item, index) => {
-                        if (index >= limit && !item.classList.contains('collapsible-content')) {
-                            collapsibleDiv.appendChild(item);
-                        }
-                    });
-                    toggleButton.style.display = 'block';
+                // Move items into collapsible-content if they exceed the limit
+                if (totalItems > limit) {
+                    // Ensure collapsible-content exists; create if necessary (though it should exist from HTML)
+                    if (!collapsibleDiv) {
+                        console.error("Collapsible content div not found, but needed.", card);
+                        return;
+                    }
+
+                    // Move items from initialVisibleItems to collapsibleItems if they exceed the limit
+                    // This handles cases where more than 'limit' items were initially visible
+                    for (let i = initialVisibleItems.length - 1; i >= limit; i--) {
+                        collapsibleDiv.prepend(initialVisibleItems.pop()); // Move to the beginning of collapsible content
+                    }
+
+                    // Now, ensure the button is visible
+                    if (toggleButton) {
+                        toggleButton.style.display = 'block';
+                        // Reset button text to "View More" initially
+                        toggleButton.textContent = 'View More';
+                        collapsibleDiv.classList.remove('expanded'); // Ensure it starts collapsed
+                    }
                 } else {
-                    // Hide the button if there are no items to hide
+                    // If total items are less than or equal to the limit, hide the button
                     if (toggleButton) {
                         toggleButton.style.display = 'none';
                     }
                     if (collapsibleDiv) {
-                        collapsibleDiv.classList.remove('expanded'); // Ensure it's not expanded if button is hidden
+                        collapsibleDiv.classList.remove('expanded');
+                        // If all content fits and there's a collapsible div, move its content back out
+                        Array.from(collapsibleDiv.children).forEach(child => {
+                            ul.appendChild(child);
+                        });
                     }
                 }
             });
         }
+
 
         // --- Inline Expansion Functionality for Skills, Work Experience, Education & Certifications ---
         document.querySelectorAll('.toggle-content-btn').forEach(button => {
